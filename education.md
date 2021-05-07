@@ -1,7 +1,6 @@
 ---
-layout: default
+layout: alt
 title: Education
-description: false
 ---
 
 # Here is information about education
