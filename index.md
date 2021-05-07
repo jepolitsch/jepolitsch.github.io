@@ -4,7 +4,7 @@ layout: default
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Link to another page](./education.md).
+[Education](./education.md).
 
 There should be whitespace between paragraphs.
 
