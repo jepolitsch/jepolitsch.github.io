@@ -2,7 +2,7 @@
 layout: default
 ---
 
-##Here is information about education
+# Here is information about education
 
 [Home](./index.md).
 
