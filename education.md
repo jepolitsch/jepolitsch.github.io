@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Education
-description:
+description: None
 ---
 
 # Here is information about education
