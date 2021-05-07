@@ -1,6 +1,3 @@
----
-layout: default
----
 
 # Here is information about education
 
