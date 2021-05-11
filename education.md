@@ -1,7 +1,7 @@
 ---
 layout: alt
-title: Education
-description: None
+title: Julian Politsch
+description: Education
 ---
 
 # Here is information about education
