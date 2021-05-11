@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: alt
 title: Julian Politsch
 description: Home
 ---
