@@ -1,11 +1,9 @@
 ---
 layout: alt
-title: Home
-description: None
+title: Julian Politsch
+description: Home
 ---
 
-# Julian Politsch
-### Home
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [Education](./education.md).
