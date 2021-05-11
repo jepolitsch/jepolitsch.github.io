@@ -1,6 +1,6 @@
 
-### Julian Politsch
-# Home
+#Julian Politsch
+### Home
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [Education](./education.md).
