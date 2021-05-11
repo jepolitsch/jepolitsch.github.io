@@ -1,5 +1,10 @@
+---
+layout: alt
+title: Home
+description: None
+---
 
-#Julian Politsch
+# Julian Politsch
 ### Home
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
