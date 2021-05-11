@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Julian Politsch
-description: Home Page
+title: Home
+description: Julian Politsch
 ---
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
