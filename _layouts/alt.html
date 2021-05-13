@@ -5,8 +5,7 @@
    <head>
     <meta charset="utf-8">
         <h1 id="project_title" style="background-color:powderblue;" >{{ page.title | default: Title}}</h1>
-     
-        <nav id="Header" style="background-color:white;">
+        <nav id="Header" style="background-color:powderblue;">
            {% for item in site.data.navigation %}
               <a href="{{ item.link }}" {% if page.url == item.link %}style="color:yellow; background-color:powderblue;"{% endif %}>
                  {{ item.name }}
