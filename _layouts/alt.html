@@ -1,13 +1,13 @@
 <!doctype html>
 <html>
-  <head>
+  <head style="background-color:blue;">
     <meta charset="utf-8">
     <div id="header_wrap" class="outer">
         <header class="inner">
           <h1 id="project_title">{{ page.title | default: Title}}</h1>
           <h2 id="project_tagline">{{ page.description | default: Description}}</h2>
   </head>
-  <body>
+  <body style="background-color:grey;">
     {% include navigation.html %}
     {{ content }}
   </body>
