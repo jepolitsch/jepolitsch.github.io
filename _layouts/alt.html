@@ -9,7 +9,7 @@
         <h1 id="project_title" style="background-color:#9f6060;" >{{ page.title | default: Title}}</h1>
         <nav id="project_tagline" style="background-color:#9f6060;">
            {% for item in site.data.navigation %}
-              <a href="{{ item.link }}" {% if page.url == item.link %} "background-color:#9f9f60;"{% endif %}>
+              <a href="{{ item.link }}" {% if page.url == item.link %} style="background-color:#9f9f60;"{% endif %}>
                  {{ item.name }}
               </a>
             {% endfor %}
