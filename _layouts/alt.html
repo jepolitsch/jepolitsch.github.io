@@ -7,6 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
     <style>
+      .center {
+       text-align: center;
+       border: 3px solid green;
+        }
+
             nav {
                 width: 100;
                 height: 30;
@@ -15,8 +20,8 @@
                 font-size: 30px;
                 background-color: #9f6060;
         </style>
-        <h1 id="project_title" style="background-color:#9f6060;" >{{ page.title | default: Title}}</h1>
-        <nav id="nav" style="background-color:#9f6060; font-size: 20px;">
+        <h1 id="project_title" style="background-color:#9f6060; text-align: center; border:3px solid black" >{{ page.title | default: Title}}</h1>
+        <nav class="center" style="background-color:#9f6060; font-size: 20px;">
            {% for item in site.data.navigation %}
               <a href="{{ item.link }}" style= "margin: 10px" {% if page.url == item.link %} style="background-color:#9f9f60"{% endif %}>
                  {{ item.name }}
