@@ -8,7 +8,7 @@
         <h2 id="project_tagline" style="background-color:powderblue;">{{ page.description | default: Description}}</h2>
          <nav>
             {% for item in site.data.navigation %}
-               <a href="{{ item.link }}" {% if page.url == item.link %}style="color: yellow;" style="background-color:powderblue;"{% endif %}>
+               <a href="{{ item.link }}" {% if page.url == item.link %}style="color:yellow; background-color:powderblue;"{% endif %}>
                   {{ item.name }}
                </a>
             {% endfor %}
