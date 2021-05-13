@@ -3,13 +3,22 @@
   <head">
     <meta charset="utf-8">
    </head>
-   <body style="background-color:white;">                 
+
+.header {
+  padding: 40px;
+  text-align: center;
+  background: white;
+  color: grey;
+  font-size: 20px;
+}
+   <body style="background-color:red;">                 
       <div id="header_wrap" class="outer">
           <header class="inner">
             <h1 id="project_title">{{ page.title | default: Title}}</h1>
             <h2 id="project_tagline">{{ page.description | default: Description}}</h2>
             {% include navigation.html %}
   </body>
+  
   <body style="background-color:cadetblue;">
     {{ content }}
   </body>
