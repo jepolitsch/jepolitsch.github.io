@@ -27,7 +27,7 @@ v---
         <h1 id="project_title" style="background-color:#9f6060;" class="nav" >{{ page.title | default: Title}}</h1>
         <nav class="nav" style="background-color:#9f6060; font-size: 20px; margin: 10px">
            {% for item in site.data.navigation %}
-              <a href="{{ item.link }}" {% if page.url == item.link %} style="background-color:#9f9f60"{% endif %}>
+              <a style="padding: 20px;" href="{{ item.link }}" {% if page.url == item.link %} style="background-color:#9f9f60"{% endif %}>
                  {{ item.name }}
               </a>
             {% endfor %}
