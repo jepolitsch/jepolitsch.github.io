@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,maximum-scale=1">
     <style>
-      .center {
-       text-align: center;
+      .nav {
+       text-align: left;
        border: 3px solid black;
        width: 900px;
        margin-left: auto;
        margin-right: auto;
         }
-       .left {
+       .main {
        text-align: left;
        margin-left: auto;
        margin-right: auto;
@@ -23,25 +23,18 @@
        padding: 20px;
         }
 
-            nav {
-                width: 100;
-                height: 30;
-                margin: 10;
-                padding: 0;
-                font-size: 30px;
-                background-color: #9f6060;
         </style>
-        <h1 id="project_title" style="background-color:#9f6060;" class="center" >{{ page.title | default: Title}}</h1>
-        <nav class="center" style="background-color:#9f6060; font-size: 20px;">
+        <h1 id="project_title" style="background-color:#9f6060;" class="nav" >{{ page.title | default: Title}}</h1>
+        <nav class="nav" style="background-color:#9f6060; font-size: 20px; margin: 10px">
            {% for item in site.data.navigation %}
-              <a href="{{ item.link }}" style= "margin: 10px" {% if page.url == item.link %} style="background-color:#9f9f60"{% endif %}>
+              <a href="{{ item.link }}" {% if page.url == item.link %} style="background-color:#9f9f60"{% endif %}>
                  {{ item.name }}
               </a>
             {% endfor %}
         </nav                    
    </head>
                          
-  <body style="background-color:cadetblue" class="left"  >
+  <body style="background-color:cadetblue" class="main"  >
     {{ content }}
   </body>
 </html>
