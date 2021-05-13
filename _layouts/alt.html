@@ -3,26 +3,15 @@
   <head">
     <meta charset="utf-8">
    </head>
-
-.header {
-  padding: 40px;
-  text-align: center;
-  background: white;
-  color: grey;
-  font-size: 20px;
-}
-  <body style="background-color:cadetblue;">
+                         
+   <body style="background-color:cadetblue;">
       <div id="header_wrap" class="outer">
           <header class="inner">
             <h1 id="project_title">{{ page.title | default: Title}}</h1>
             <h2 id="project_tagline">{{ page.description | default: Description}}</h2>
             {% include navigation.html %}
       </div>
-      <div class="header">
-        <h1>Header</h1>
-        <p>Test Header</p>
-      </div>
-  </body>
+   </body>
   
   <body style="background-color:cadetblue;">
     {{ content }}
