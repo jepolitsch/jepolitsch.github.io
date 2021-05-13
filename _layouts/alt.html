@@ -1,7 +1,12 @@
+---
+---
 <!doctype html>
 <html>
-  <head">
+   <head">
     <meta charset="utf-8">
+        <h1 id="project_title">{{ page.title | default: Title}}</h1>
+        <h2 id="project_tagline">{{ page.description | default: Description}}</h2>
+         {% include navigation.html %}                    
    </head>
                          
    <body style="background-color:cadetblue;">
