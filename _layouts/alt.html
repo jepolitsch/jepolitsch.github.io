@@ -9,7 +9,8 @@
     <style>
       .center {
        text-align: center;
-       border: 3px solid green;
+       border: 3px solid black;
+       width: 100px;
         }
 
             nav {
@@ -20,7 +21,7 @@
                 font-size: 30px;
                 background-color: #9f6060;
         </style>
-        <h1 id="project_title" style="background-color:#9f6060; text-align: center; border:3px solid black" >{{ page.title | default: Title}}</h1>
+        <h1 id="project_title" style="background-color:#9f6060;" class="center" >{{ page.title | default: Title}}</h1>
         <nav class="center" style="background-color:#9f6060; font-size: 20px;">
            {% for item in site.data.navigation %}
               <a href="{{ item.link }}" style= "margin: 10px" {% if page.url == item.link %} style="background-color:#9f9f60"{% endif %}>
@@ -30,7 +31,7 @@
         </nav                    
    </head>
                          
-  <body style="background-color:cadetblue;">
+  <body style="background-color:cadetblue;" class= "center">
     {{ content }}
   </body>
 </html>
