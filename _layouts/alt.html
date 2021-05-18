@@ -17,7 +17,10 @@
        width: device-width;
        margin-left: auto;
        margin-right: auto;
-       padding: 20px;
+       padding: auto;
+       text-shadow: none;
+       background-color:Plum;
+   
         }
        .main {
        text-align: left;
@@ -26,11 +29,12 @@
        border: 3px solid black;
        width: device-width;
        padding: 20px;
+       background-color:#FFE4B5;
         }
 
         </style>
-        <h1 id="project_title" style="background-color:#E0FFFF; border: 3px solid black; color:black " class="nav" >{{ page.title | default: Title}}</h1>
-        <nav class="nav" style="background-color:#E0FFFF; font-size: auto; margin: auto">
+        <h1 id="project_title" style="border: 3px solid black; color:black" class="nav" >{{ page.title | default: Title}}</h1>
+        <nav class="nav" style="font-size: calc((.4em + 1vmin) + (.4em + 1vmax)); margin: auto">
            {% for item in site.data.navigation %}
               <a class="nav" href="{{ item.link }}" {% if page.url == item.link %} style="background-color:#E6E6FA"{% endif %}>
                  {{ item.name }}
