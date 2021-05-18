@@ -1,7 +1,7 @@
 ---
 layout: alt
 title: Julian Politsch
-description: Home
+
 ---
 
 ## Profile
