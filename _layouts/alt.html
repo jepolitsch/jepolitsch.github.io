@@ -14,7 +14,6 @@
     <style>
       .nav {
        text-align: center;
-       border: 3px solid black;
        width: device-width;
        margin-left: auto;
        margin-right: auto;
@@ -30,8 +29,8 @@
         }
 
         </style>
-        <h1 id="project_title" style="background-color:#E0FFFF;" class="nav" >{{ page.title | default: Title}}</h1>
-        <nav class="nav" style="background-color:#E0FFFF; font-size: 20px; margin: 10px">
+        <h1 id="project_title" style="background-color:#E0FFFF; border: 3px solid black; color:black " class="nav" >{{ page.title | default: Title}}</h1>
+        <nav class="nav" style="background-color:#E0FFFF; font-size: auto; margin: auto">
            {% for item in site.data.navigation %}
               <a class="nav" href="{{ item.link }}" {% if page.url == item.link %} style="background-color:#E6E6FA"{% endif %}>
                  {{ item.name }}
