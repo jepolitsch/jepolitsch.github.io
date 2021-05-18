@@ -19,7 +19,7 @@
        margin-right: auto;
        padding: auto;
        text-shadow: none;
-       background-color:Plum;
+       background-color:Ivory;
    
         }
        .main {
@@ -29,12 +29,12 @@
        border: 3px solid black;
        width: device-width;
        padding: 20px;
-       background-color:#FFE4B5;
+       background-color:LavanderBlush;
         }
 
         </style>
         <h1 id="project_title" style="border: 3px solid black; color:black" class="nav" >{{ page.title | default: Title}}</h1>
-        <nav class="nav" style="font-size: calc((.4em + 1vmin) + (.4em + 1vmax)); margin: auto">
+        <nav class="nav" style="font-size:15pt; margin: auto">
            {% for item in site.data.navigation %}
               <a class="nav" href="{{ item.link }}" {% if page.url == item.link %} style="background-color:#E6E6FA"{% endif %}>
                  {{ item.name }}
