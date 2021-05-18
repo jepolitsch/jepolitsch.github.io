@@ -33,7 +33,7 @@
         }
 
         </style>
-        <h1 id="project_title" style="border: 3px solid black; color:black" class="nav" >{{ page.title | default: Title}}</h1>
+        <hd id="project_title" style="color:black" class="nav" >{{ page.title | default: Title}}</hd>
         <nav class="nav" style="font-size:15pt; margin: auto">
            {% for item in site.data.navigation %}
               <a class="nav" href="{{ item.link }}" {% if page.url == item.link %} style="background-color:#E6E6FA"{% endif %}>
