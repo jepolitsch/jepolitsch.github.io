@@ -4,10 +4,9 @@ title: Julian Politsch
 description: Home
 ---
 
-## Currently
+## Profile
 
-* Studying bioinformatics at [La Sapienza Univerity of Rome](https://www.uniroma1.it/en/)
-* Summer open source research project
+Julian Politsch is currently studying bioinformatics at [La Sapienza Univerity of Rome](https://www.uniroma1.it/en/), pursuing a undergraduate degree in english. The degree is a collaboration between the faculties of; pharmacy and medicine, statistical sciences, information engeneering, and applied mathmatics. 
 
 ## Contact 
 
