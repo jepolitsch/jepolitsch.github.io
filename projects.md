@@ -17,9 +17,16 @@ Cells trigger massive changes in gene expression upon environmental fluctuations
 4. Generate a comprehensive report using MultiQC
 5. Data quantitification with Salmon
 6. Differential expression analysis with DESeq2 in RStudio
-7. 
-```
-$conda create -n deseq
+7. Gene Ontology (GO) enrichment analysis to find the Up regulated genes
+8. Differential Expression analysis of raw counts from paper authers
+9. Quality checking the workflow
+
+#### Step 1: 
+Lets start by creating a new conda environment with only the packages we need and their dependencies in order to avoid future errors:
+```console
+$ conda create -n deseq
+$ conda activate deseq
+$ 
 ```
 
 In linux terniaml we run the following SRA toolkit package commands:
