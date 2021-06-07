@@ -2,10 +2,13 @@
 layout: alt
 title: Julian Politsch
 ---
+# RNAseq WorkFlow of Regulation of transcription elongation in response to osmostress:
+## Julian Politsch, Bioinformatics 2021 La Sapienza
 
-# RNA-seq Analysis for Hylobius abietis -Whole Body tissue:
 
-## Aims: Hylobius abietis is studied for its detramental effects on ecosystems in Europe. RNA-seq analysis allows the possibiliy to better understand the proteome of the pest, and open the door to possible control mechanisms.
+
+RNA-seq data comes from this paper: [Regulation of transcription elongation in response to osmostresslink:] (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5720810/). The data have been deposited in the Gene Expression Omnibus (GEO) database.
+
 
 In linux terniaml we run the following SRA toolkit package commands:
   ### Retreive the RNA-seq Data
