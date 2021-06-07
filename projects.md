@@ -26,9 +26,12 @@ Lets start by creating a new conda environment with only the packages we need an
 ```console
 $ conda create -n deseq
 $ conda activate deseq
-$ 
+$ conda install sra-tools=2.11 FastQC MultiQC Salmon
+$ conda install -c bioconda trim-galore
+
 ```
 
+SRA tools can also be installed with apt get, but it is an older verson with less feature 
 In linux terniaml we run the following SRA toolkit package commands:
   ### Retreive the RNA-seq Data
   ./prefetch SRR6765939 
