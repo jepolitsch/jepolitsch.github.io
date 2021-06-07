@@ -21,14 +21,3 @@ description: Education
 - Analyzing and predicting the structural and functional aspects of macromolecules and their interactions with ligands and drugs.
 
 In this regard, a "new alliance" between bioengineering (bioinformatics), biology, chemistry and medicine appears to be of great strategic importance in order to respond to the challenges arising due to the overwhelming development of biomolecular technologies.
-
-## Forestry, University of Montana
-
-* 2017-2018
-* Required extra year of schooling to enter italian public university
-
-## Highschool, Saint Paul Prepratory School
-
-* Graduated 2017
-* Final GPA: 3.4/4
-* STEM focus
