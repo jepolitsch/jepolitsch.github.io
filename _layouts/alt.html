@@ -32,7 +32,7 @@
         }
 
         </style>
-        <hea class="nav" style="font-size:32; margin:auto" >{{ page.title | default: Title}}</hea>
+        <hea class="nav" style="font-size:32px; margin:auto; width:device-width" >{{ page.title | default: Title}}</hea>
         <nav class="nav" style="font-size:20px; margin:auto">
            {% for item in site.data.navigation %}
               <a class="nav" href="{{ item.link }}" {% if page.url == item.link %} style="background-color:#E6E6FA"{% endif %}>
