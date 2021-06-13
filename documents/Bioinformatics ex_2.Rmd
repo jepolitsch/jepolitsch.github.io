@@ -1,0 +1,221 @@
+---
+title: "Bioinformatics ex_2"
+author: "Julian Politsch"
+date: "27/04/2021"
+output: html_document
+---
+
+```{r counts_summary} 
+counts <- read.table("rnaseq.txt", header = TRUE, row.names = 1)
+countData <- as.matrix(subset(counts, select = c(-Symbol)))
+summary(counts)
+```
+
+
+---
+# DESeq2 
+**colData** table
+**design formula**:
+```{r deseq_setup_1}
+#define the experimental setup 
+colData <- read.table("sampledata.txt", header = TRUE, sep = '\t', stringsAsFactors = TRUE)
+colData
+#define the design formula
+designFormula <- "~ group"
+```
+
+---
+```{r deseq_setup_2}
+suppressMessages(suppressWarnings(library(DESeq2)))
+dds <- DESeqDataSetFromMatrix(countData = countData, 
+                              colData = colData, 
+                              design = as.formula(designFormula))
+
+print(dds)
+```
+
+---
+# Filtering non-expressed genes
+
+```{r}
+is_expressed <- assay(dds) >= 1
+head(is_expressed)
+```
+```{r}
+keep <- rowSums(counts(dds)) > 10
+table(keep)
+dds <- dds[keep, ]
+nrow(dds)
+```
+
+```{r}
+dds <- DESeq(dds)
+head(dds)
+DEresults <- results(dds, contrast = c("group", 'CASE', 'CTRL'))
+DEresults <- DEresults[order(DEresults$pvalue), ]
+DEresults
+```
+#plotting
+# MA plot
+
+- An **MA plot** is useful to observe if the data normalization worked well. 
+
+- The **MA plot** is a scatter plot where the x-axis denotes the average of normalized counts across samples and the y-axis denotes the log fold change in the given contrast.
+
+- Most points are expected to be on the horizontal 0 line (most genes are not expected to be differentially expressed).
+
+
+```{r}
+library(DESeq2)
+DESeq2::plotMA(object = dds, ylim = c(-5, 5))
+```
+# PCA plot
+
+A final diagnosis is to check the biological reproducibility of the sample replicates in a PCA plot or a heatmap. 
+
+To plot the PCA results, we need to extract the **normalized counts** from the DESeqDataSet object. 
+
+It is possible to color the points in the scatter plot by the variable of interest, which helps to see if the replicates cluster well.
+
+```{r}
+library(ggplot2)
+rld <- rlog(dds)
+DESeq2::plotPCA(rld, ntop = 500, intgroup = 'group') + 
+   theme_bw()
+```
+```{r}
+ndeg <-  subset(DEresults, padj<=0,05)
+nrow(ndeg)
+
+```
+
+
+
+
+#Point 1: removing m4 from the library
+```{r}
+sample1 <- read.table("sampledata.txt", sep='\t')
+head(sample1)
+sample1 = sample1[-4,]
+head(sample1)
+counts1 = subset(counts, select = -c(m4) )
+head(counts1)
+countData1 <- as.matrix(subset(counts1, select = c(-Symbol)))
+summary(counts1)
+```
+
+
+```{r}
+
+suppressMessages(suppressWarnings(library(DESeq2)))
+#create a DESeq dataset object from the count matrix and the colData 
+dds1 <- DESeqDataSetFromMatrix(countData = countData1, 
+                              colData = sample1, 
+                              design = as.formula(designFormula))
+#print dds object to see the contents
+print(dds1)
+
+
+```
+# Filtering non-expressed genes
+
+```{r}
+is_expressed1 <- assay(dds1) >= 1
+head(is_expressed1)
+```
+```{r}
+keep1 <- rowSums(counts(dds1)) > 10
+table(keep)
+dds1 <- dds1[keep1, ]
+nrow(dds1)
+```
+
+```{r}
+dds1 <- DESeq(dds1)
+head(dds1)
+DEresults1 <- results(dds1, contrast = c("group", 'CASE', 'CTRL'))
+#sort results by increasing p-value
+DEresults1 <- DEresults1[order(DEresults1$pvalue), ]
+DEresults1
+```
+#plotting
+```{r}
+library(DESeq2)
+DESeq2::plotMA(object = dds1, ylim = c(-5, 5))
+```
+
+
+```{r}
+library(ggplot2)
+rld1 <- rlog(dds1)
+DESeq2::plotPCA(rld1, ntop = 500, intgroup = 'group') + 
+   theme_bw()
+```
+```{r}
+ndeg1 <-  subset(DEresults1, padj<=0,05)
+nrow(ndeg1)
+
+```
+```{r}
+
+```
+
+#Point 2: changing m4 from case to control
+```{r}
+sample2 <- read.table("sampledata.txt", sep='\t')
+head(sample2)
+sample2$group[4] <- 'CTRL'
+```
+
+
+```{r}
+suppressMessages(suppressWarnings(library(DESeq2)))
+#create a DESeq dataset object from the count matrix and the colData 
+dds2 <- DESeqDataSetFromMatrix(countData = countData, 
+                              colData = sample2, 
+                              design = as.formula(designFormula))
+#print dds object to see the contents
+print(dds2)
+```
+
+
+```{r}
+is_expressed2 <- assay(dds2) >= 1
+head(is_expressed2)
+```
+```{r}
+keep2 <- rowSums(counts(dds2)) > 10
+table(keep2)
+dds2 <- dds2[keep2, ]
+nrow(dds2)
+```
+
+```{r}
+dds2 <- DESeq(dds2)
+head(dds2)
+DEresults2 <- results(dds2, contrast = c("group", 'CASE', 'CTRL'))
+#sort results by increasing p-value
+DEresults2 <- DEresults2[order(DEresults$pvalue), ]
+DEresults2
+```
+#plotting
+
+```{r}
+library(DESeq2)
+DESeq2::plotMA(object = dds2, ylim = c(-5, 5))
+```
+#calculating new parameters
+
+```{r}
+library(ggplot2)
+rld2 <- rlog(dds2)
+DESeq2::plotPCA(rld2, ntop = 500, intgroup = 'group') + 
+   theme_bw()
+```
+
+```{r}
+ndeg2 <-  subset(DEresults2, padj<=0,05)
+nrow(ndeg2)
+```
+
+

@@ -1,0 +1,49 @@
+---
+title: "rnaSEQ excercise 1"
+author: "Julian Politsch"
+date: "3/23/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+```{r}
+getwd()
+```
+
+
+```{r}
+counts <- read.table("rnaseq_2.txt", header = TRUE, row.names = 1)
+head(counts)
+str(counts)
+```
+```{r}
+plot(counts$X1_m, counts$X2_m)
+```
+```{r}
+plot(log2(counts$X1_m))
+```
+```{r}
+plot(log2(counts$X1_m), log2(counts$X2_m), xlab = "First Run", ylab = "Second Run")
+```
+
+```{r}
+counts <- counts[, -1]
+counts_log <- log2(counts)
+head(counts_log)
+```
+```{r}
+counts_log <- log2(counts)
+head(counts_log)
+```
+
+```{r}
+plot(counts_log)
+```
+```{r,warning=FALSE}
+boxplot(counts_log)
+```
+
