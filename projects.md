@@ -33,9 +33,33 @@ $ conda install -c bioconda trim-galore
 
 SRA tools can also be installed with apt get, but it is an older verson with less feature 
 In linux terniaml we run the following SRA toolkit package commands:
-  ### Retreive the RNA-seq Data
-  ./prefetch SRR6765939 
-  ### Convert from SRA to Fastq
-  ./fastq-dump SRR6765939.sra
-  
+    
+### Step 2-Download Data From SRA:
+
+This study contains 12 RNA-seq samples from yeast and there are 3 replicates for 4 conditions.
+
+First download a list of Run IDs in a file named [SRR_lst.txt](LINK TO HTTP OF LIST), and then download the SRA files with:
+```
+$cd Desktop/deseq/data
+$cat SRR_Acc_list.txt | xargs -n 1 prefetch ; fastq-dump -0 home/julian/Desktop/deseq/data/fastq_dump *.sra --gzip
+```
+
+This step takes a lot of time and storage, each file is almost one GB its better to run it in the background by pressing "Ctrl + Z" followed by "$bg", then the progress is shown by entering "$jobs"
+
+
+### Step 3-Check reads quality:
+
+In the same directory, containing the fastq.gz files we run the following command in order to check the quality of our reads:
+```    
+    $cd ~/Desktop/deseq/data/fastq_dump
+    $fastqc -o ~/Desktop/deseq/data/fastqc_reports *.fastq.gz
+```
+
+### Step 4-Compare all fastQC reports:
+
+MultiQC is a tool to aggregate results from bioinformatics analysis logs across multiple samples into a single report, perfect for summarizing the output of numerous bioinformatics tools.
+
+Simply run with:
+    $multiqc .
+While in the directory you want the tool to search    
 
