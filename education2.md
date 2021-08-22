@@ -7,7 +7,7 @@ description: Education
 ## Bioinformatics, La Sapienza 
 
 * Expected graduation: June 2022
-* Current GPA: 26/30
+* Current GPA: 27.3/30
 * Class Representative
 
 [The course](https://corsidilaurea.uniroma1.it/en/corso/2020/30422/home) is taught completely in english and mainly deals with:
