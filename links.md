@@ -3,10 +3,20 @@ layout: alt
 title: Julian Politsch
 ---
 
-#### Notes and Summaries
+### Notes and Summaries
 All documents here are created entirely or partially by me, for the sole purpose of my own knowledge, feel free to use them:
+#### Cell Biology (12 Credits)
+[Cell Biology I Summary](https://github.com/jepolitsch/Personal-Site/raw/gh-pages/documents/Cell%20Biology%20Sem.%20I%20Summary.pdf)
 
-##### Biochemestry (12 Credits)
+[Cell Biology II Summary](https://github.com/jepolitsch/Personal-Site/raw/gh-pages/documents/Cell%20Biology%20Sem.%20II%20Summary.pdf)
+
+#### Chemestry (12 Credits)
+
+[Inorganic Chemestry Summary](https://github.com/jepolitsch/Personal-Site/raw/gh-pages/documents/Inorganic%20Chemistry%20Summary%203.0%20online.pdf)
+
+Organic Chemestry Summary (Needed)
+
+#### Biochemestry (12 Credits)
 [Biochemestry I part I Summary](https://github.com/jepolitsch/Personal-Site/raw/gh-pages/documents/Biochemestry%20Summary%20(No%20metabolism).pdf)
 
 [Biochemestry I Part II Summary (Metabolism)](https://github.com/jepolitsch/Personal-Site/raw/gh-pages/documents/Biochemestry%20Metabolism%20Outline.pdf)
@@ -14,5 +24,34 @@ All documents here are created entirely or partially by me, for the sole purpose
 [Biochemestry II Part I Summary](https://github.com/jepolitsch/Personal-Site/raw/gh-pages/documents/Biochemistry%20II%20Notes.pdf)
 
 [Biochemestry II Part II Summary](https://github.com/jepolitsch/Personal-Site/raw/gh-pages/documents/Biochemestry%20II%20Exception%20II%20Notes.pdf)
+
+[Metabolism Regulation and compartamentalization](https://github.com/jepolitsch/Personal-Site/raw/gh-pages/documents/Genetics-Master.pdf)
+
+#### Genetics and Computational Genomics (6 Credits)
+
+[Genetics "Cheat Sheet"](https://github.com/jepolitsch/Personal-Site/raw/gh-pages/documents/Genetics%20Cheat%20Sheet.pdf)
+
+[Genetics Summary](https://github.com/jepolitsch/Personal-Site/raw/gh-pages/documents/Genetics-Master.pdf)
+
+#### Microbiology (6 Credits)
+
+[Microbiology Summary](https://github.com/jepolitsch/Personal-Site/raw/gh-pages/documents/Microbiology%20Summary.pdf)
+
+[Microbiology Talking Points (oral exam)](https://github.com/jepolitsch/Personal-Site/raw/gh-pages/documents/MicroBiology%20Talking%20Points.pdf)
+
+#### Molecular Biology (12 Credits)
+
+[Molecular Biology I Summary](https://github.com/jepolitsch/Personal-Site/raw/gh-pages/documents/Molecular%20Biology%20Summary%20Final.pdf)
+
+[Molecular Biology I "Cheat Sheet"](https://github.com/jepolitsch/Personal-Site/raw/gh-pages/documents/Molecular%20Cheat%20Sheet.pdf)
+
+[Molecular Biology II Outline](https://github.com/jepolitsch/Personal-Site/raw/gh-pages/documents/Molecular%20II%20Talking%20Points.pdf)
+
+[Biotechnology Techniques](https://github.com/jepolitsch/Personal-Site/raw/gh-pages/documents/Biotechnology%20Techniques.pdf)
+
+
+
+
+
 
 
