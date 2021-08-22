@@ -1,10 +1,9 @@
 ---
-title: "Workflow Full"
-author: "Julian Politsch"
-date: "6/7/2021"
-output:
-  pdf_document: default
-  html_document: default
+---
+layout: alt
+title: Julian Politsch
+description: DeSEQ
+---
 ---
 # RNAseq workflow
 ### Julian Politsch
