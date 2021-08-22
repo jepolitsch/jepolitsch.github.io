@@ -24,13 +24,12 @@ Cells trigger massive changes in gene expression upon environmental fluctuations
 
 
 
-### Step 1-Setup:
+#### Step 1-Setup:
 
 First we should make a fresh conda environment with only the nessasary packages in order to avoid future errors:
     
     $conda create -n deseq
     $conda install fastqc multiqc trimgalore salmon sra-tools=2.11
-    $
     
 #### Step 2-Download Data From SRA:
 
