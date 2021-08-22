@@ -23,13 +23,18 @@ Cells trigger massive changes in gene expression upon environmental fluctuations
 9. Quality checking the workflow
 
 
+#### Step 1: 
+Lets start by creating a new conda environment with only the packages we need and their dependencies in order to avoid future errors:
+```console
+$ conda create -n deseq
+$ conda activate deseq
+$ conda install sra-tools=2.11 FastQC MultiQC Salmon
+$ conda install -c bioconda trim-galore
 
-#### Step 1-Setup:
+```
 
-First we should make a fresh conda environment with only the nessasary packages in order to avoid future errors:
-    
-    $conda create -n deseq
-    $conda install fastqc multiqc trimgalore salmon sra-tools=2.11
+SRA tools can also be installed with apt-get, but it is an older verson with less feature 
+In linux terniaml we run the following SRA toolkit package commands:
     
 #### Step 2-Download Data From SRA:
 
