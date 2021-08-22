@@ -1,9 +1,7 @@
 ---
----
 layout: alt
 title: Julian Politsch
 description: DeSEQ
----
 ---
 # RNAseq workflow
 ### Julian Politsch
