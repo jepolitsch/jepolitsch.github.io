@@ -33,8 +33,7 @@ $ conda install -c bioconda trim-galore
 
 ```
 
-SRA tools can also be installed with apt-get, but it is an older verson with less feature 
-In linux terniaml we run the following SRA toolkit package commands:
+SRA tools can also be installed with apt-get, but it is an older verson with less features.
     
 #### Step 2-Download Data From SRA:
 
