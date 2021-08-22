@@ -4,7 +4,7 @@ title: Julian Politsch
 description: Education
 ---
 
-## Bioinformatics, La Sapienza 
+## Bioinformatics, La Sapienza University of Rome
 
 * Expected graduation: June 2022
 * Current GPA: 27.3/30
@@ -24,7 +24,7 @@ In this regard, a "new alliance" between bioengineering (bioinformatics), biolog
 
 ## Forestry, University of Montana
 
-* 2017-2018
+* School year of 2017-2018
 * Required extra year of schooling to enter italian public university
 
 ## Highschool, Saint Paul Prepratory School
