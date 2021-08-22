@@ -2,11 +2,9 @@
   link: /
 - name: Education
   link: /education.html
+- name: Links
+  link: /links.html
 - name: Experience
   link: /experience.html
 - name: DeSEQ
   link: /DeSEQ.html
-- name: 3D-QSAR
-  link: /3dqsar.html
-- name: Links
-  link: /links.html
