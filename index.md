@@ -6,7 +6,7 @@ title: Julian Politsch
 
 ## Profile
 
-Julian Politsch is currently studying bioinformatics at [La Sapienza Univerity of Rome](https://www.uniroma1.it/en/), pursuing a undergraduate degree in english. The degree is a collaboration between the faculties of; pharmacy and medicine, statistical sciences, information engeneering, and applied mathmatics.
+Julian Politsch is currently studying bioinformatics at [La Sapienza Univerity of Rome](https://www.uniroma1.it/en/), pursuing a undergraduate degree. The degree is a collaboration between the faculties of; pharmacy and medicine, statistical sciences, information engeneering, and applied mathmatics.
 
 Originally from Minneapolis Minnesota, moved to Italy on a student visa and will graduate with an italian diploma from the number one school in Italy.
 
