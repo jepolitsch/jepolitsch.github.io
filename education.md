@@ -31,4 +31,4 @@ In this regard, a "new alliance" between bioengineering (bioinformatics), biolog
 
 * Graduated 2017
 * Final GPA: 3.4/4
-* STEM focus
+* STEM Diploma
