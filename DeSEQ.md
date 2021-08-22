@@ -23,7 +23,8 @@ Cells trigger massive changes in gene expression upon environmental fluctuations
 9. Quality checking the workflow
 
 
-#### Step 1: 
+#### Step 1-Conda Enviroment Setup:
+
 Lets start by creating a new conda environment with only the packages we need and their dependencies in order to avoid future errors:
 ```console
 $ conda create -n deseq
