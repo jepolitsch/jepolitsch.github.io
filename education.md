@@ -30,5 +30,5 @@ In this regard, a "new alliance" between bioengineering (bioinformatics), biolog
 ## Highschool, Saint Paul Prepratory School
 
 * Graduated 2017
-* Final GPA: 3.4/4
+* Final GPA: 3.8/4
 * STEM Diploma
