@@ -40,7 +40,7 @@ SRA tools can also be installed with apt-get, but it is an older verson with les
 
 This study contains 12 RNA-seq samples from yeast and there are 3 replicates for 4 conditions.
 
-First download a list of Run IDs in a file named [SRR_lst.txt](LINK TO HTTP OF LIST), and then download the SRA files with:
+First download a list of Run IDs in a file named SRR_lst.txt, and then download the SRA files with:
 ```
 $cd Desktop/deseq/data
 $cat SRR_Acc_list.txt | xargs -n 1 prefetch ; fastq-dump -0 home/julian/Desktop/deseq/data/fastq_dump *.sra --gzip
