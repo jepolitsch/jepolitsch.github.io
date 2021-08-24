@@ -132,4 +132,4 @@ BiocManager::install(packages)
 
 install.packages(c("readr", "ggplot2"))
 ```
-Next  
+Next I will show the step-by-step of my R code, but dont get bogged down on the details and skip to Step 8 as I will attack the scripts in a seperate file
