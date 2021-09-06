@@ -132,4 +132,186 @@ BiocManager::install(packages)
 
 install.packages(c("readr", "ggplot2"))
 ```
-Next I will show the step-by-step of my R code, but dont get bogged down on the details and skip to Step 8 as I will attack the scripts in a seperate file
+Next I will show the step-by-step of my R code, but dont get bogged down on the details and skip to Step 8 as I will attach the scripts in a seperate file
+
+##### Setup
+```{r}
+files <- file.path("/Users/julian/Desktop/deseq/results", colData$directory, "quant.sf")
+names(files) <- colData$sample
+library(DESeq2)
+library(tximport)
+library(GenomicFeatures)
+library(readr)
+library(ggplot2)
+library(stringi)
+```
+##### Initial Statistics for each quante file
+```{r counts_summary} 
+quant <- 
+counts <- read.table("/Users/julian/Desktop/deseq/quants/quant.sf", header = TRUE, row.names = 1)
+summary(counts)
+```
+
+##### Data import and quantification from salmon
+```{r}
+# salmon results directory ----
+setwd("/Users/julian/Desktop/deseq")
+dir("/Users/julian/Desktop/deseq")
+
+# import sample Metadata ----
+colData <- 
+  read.csv("/Users/julian/Desktop/deseq/sampledata.csv", header = FALSE)
+colnames(colData) <- c("fastq", "sample")
+
+colData$group <- rep(c("wt_nostress", "wt_stress", "mut_nostress", "mut_stress"), each = 3)
+colData$directory <- dir("/Users/julian/Desktop/deseq/results/")
+
+rownames(colData) <- colData$sample
+
+# quant.sf file paths ----
+files <- file.path("/Users/julian/Desktop/deseq/results", colData$directory, "quant.sf")
+names(files) <- colData$sample
+
+txi.inf.rep <- tximport::tximport(files, type = "salmon", txOut = TRUE)
+names(txi.inf.rep$sample)
+```
+
+```{r}
+# create tx2gene object ----
+txdb <- GenomicFeatures::makeTxDbFromGFF("/Users/julian/Desktop/deseq/Saccharomyces_cerevisiae.R64-1-1.104.gtf")
+k <- keys(txdb, keytype = "GENEID")
+tx2gene <- select(txdb, keys = k, keytype = "GENEID", columns = "TXNAME")
+
+# reorder columns of tx2gene ----
+tx2gene <- tx2gene[, c("TXNAME", "GENEID")]
+# check tx2gene
+head(tx2gene)
+
+# import salmon quantification data ----
+txi.salmon <- tximport(files = files, type = "salmon", tx2gene = tx2gene, ignoreTxVersion = TRUE)
+
+# check imported data ----
+head(txi.salmon$counts)
+
+# check if sample names match between objects
+identical(x = rownames(colData), y = colnames(txi.salmon$counts))
+```
+
+##### Experimental Setup and formula design 
+```{r deseq_setup_1}
+colData <- read.table("/Users/julian/Desktop/deseq/sampledata.csv", header = FALSE, sep = ',', stringsAsFactors = TRUE)
+colData
+designFormula <- "~ group"
+colData$group <- rep(c("wt_nostress", "wt_stress", "mut_nostress", "mut_stress"), each = 3)
+colData$directory <- dir("/Users/julian/Desktop/deseq/results/")
+```
+
+##### Filtering non-expressed genes
+```{r} 
+dds <- DESeqDataSetFromTximport(txi = txi.salmon, colData = colData, design = ~group)
+dds$group <- relevel(x = dds$group, ref = "wt_nostress")
+dds <- DESeq(dds)
+
+is_expressed <- assay(dds) >= 1
+head(is_expressed)
+keep <- rowSums(counts(dds)) > 10
+table(keep)
+dds <- dds[keep, ]
+nrow(dds)
+```
+
+### DeSEQ pipeline
+```{r}
+dds <- DESeq(dds)
+head(dds)
+res <- results(dds)
+summary(res)
+
+ws_wns <- results(dds, contrast = c("group", "wt_stress" ,"wt_nostress"))
+ms_mns <- results(dds, contrast = c("group", "mut_stress", "mut_nostress"))
+ms_ws <- results(dds, contrast = c("group", "mut_stress", "wt_stress"))
+mns_wns <- results(dds, contrast = c("group", "mut_nostress", "wt_nostress"))
+#### MA Plots
+# - An **MA plot** is useful to observe if the data normalization worked well. The **MA plot** is a scatter plot where the x-axis denotes the average of normalized counts across samples and the y-axis denotes the log fold change in the given contrast. Most points are expected to be on the horizontal 0 line (most genes are not expected to be differentially expressed).
+
+ws_wns <- ws_wns[order(ws_wns$pvalue), ]
+DESeq2::plotMA(ws_wns, alpha = 0.05)
+
+ms_mns <- ms_mns[order(ms_mns$pvalue), ]
+DESeq2::plotMA(ms_mns, alpha = 0.05)
+
+ms_ws <- ms_ws[order(ms_ws$pvalue), ]
+DESeq2::plotMA(ms_ws, alpha = 0.05)
+
+mns_wns <- mns_wns[order(mns_wns$pvalue), ]
+DESeq2::plotMA(mns_wns, alpha = 0.05)
+```
+
+##### Sample Distances and PCA plots
+
+A final diagnosis is to check the biological reproducibility of the sample replicates in a PCA plot or a heatmap. 
+
+To plot the PCA results, we need to extract the **normalized counts** from the DESeqDataSet object. 
+
+It is possible to color the points in the scatter plot by the variable of interest, which helps to see if the replicates cluster well.
+
+```{r}
+#### Sample distances
+library("pheatmap")
+library("RColorBrewer")
+
+#### PCA ----
+rld <- rlog(dds)
+DESeq2::plotPCA(rld, ntop = 500, intgroup = 'group') + 
+  theme_bw()
+# Sample Dist.
+sampleDists <- dist(t(assay(rld)))
+sampleDists
+
+sampleDistMatrix <- as.matrix( sampleDists )
+colors <- colorRampPalette( rev(brewer.pal(9, "Blues")) )(255)
+
+pheatmap(sampleDistMatrix,
+         clustering_distance_rows = sampleDists,
+         clustering_distance_cols = sampleDists,
+         col = colors)
+```
+
+```{r}
+library(DESeq2)
+DESeq2::plotMA(object = dds, ylim = c(-5, 5))
+```
+
+```{r}
+library(ggplot2)
+rld <- rlog(dds)
+DESeq2::plotPCA(rld, ntop = 500, intgroup = 'group') + 
+   theme_bw()
+```
+
+##### finding DE genes
+```{r}
+#remove genes with NA values 
+de1 <- ws_wns[!is.na(ws_wns$padj),]
+#select genes with adjusted p-values below 0.1
+de1 <- de1[de1$padj < 0.1,]
+#select genes with absolute log2 fold change above 1 (two-fold change)
+de1 <- de1[abs(de1$log2FoldChange) > 1,]
+
+de2 <- ms_mns[!is.na(ms_mns$padj),]
+de2 <- de2[de2$padj < 0.1,]
+de2 <- de2[abs(de2$log2FoldChange) > 1,]
+
+de3 <- ms_ws[!is.na(ms_ws$padj),]
+de3 <- de3[de3$padj < 0.1,]
+de3 <- de3[abs(de3$log2FoldChange) > 1,]
+
+de4 <- mns_wns[!is.na(mns_wns$padj),]
+de4 <- de4[de4$padj < 0.1,]
+de4 <- de4[abs(de4$log2FoldChange) > 1,]
+
+de1
+de2
+de3
+de4
+```
