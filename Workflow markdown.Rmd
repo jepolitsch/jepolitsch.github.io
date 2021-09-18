@@ -1,10 +1,7 @@
 ---
-title: "RNAseq Workflow"
-author: "Julian Politsch"
-date: "6/7/2021"
-output:
-  html_document: default
-  pdf_document: default
+layout: alt
+title: Julian Politsch
+description: DeSEQ
 ---
 ### Step 1-Setup:
 
