@@ -1,10 +1,8 @@
 - name: Home
   link: /
-- name: Education
-  link: /education.html
 - name: Links
   link: /links.html
-- name: DeSEQ
-  link: /DeSEQ.html
+- name: Projects
+  link: /projects.html
 - name: 3D-QSAR
   link: /3dqsar.html
