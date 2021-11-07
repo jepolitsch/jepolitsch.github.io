@@ -2,4 +2,11 @@ title: Julian Politsch
 description: Personal Site
 theme: jekyll-theme-slate
 show_downloads: false
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
 
