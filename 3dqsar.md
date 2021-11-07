@@ -1,7 +1,8 @@
 ---
-title: Julian Politsch
-layout: alt
+title: 3dQSAR
+published: false
 description: 3D-QSAR
+layout: alt
 ---
 
 ### Goal:
