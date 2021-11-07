@@ -1,7 +1,7 @@
 ---
-title: Julian Politsch
-layout: alt
+title: Education
 description: Education
+layout: alt
 ---
 
 ## Bioinformatics, La Sapienza University of Rome
