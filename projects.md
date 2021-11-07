@@ -1,7 +1,7 @@
 ---
 layout: alt
 title: Julian Politsch
-description: DeSEQ
+description: projects
 ---
 ### DeSeq WorkFlow of Regulation of transcription elongation in response to osmostress:
 #### Julian Politsch, Bioinformatics 2021 La Sapienza
