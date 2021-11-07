@@ -1,7 +1,6 @@
+---
 title: Julian Politsch
-description: Personal Site
-theme: jekyll-theme-slate
-show_downloads: false
+timezone: UTC
 collections:
   posts:
     title: Posts
@@ -9,4 +8,6 @@ collections:
   uploads:
     title: Uploads
     output: true
-
+description: Personal Site
+theme: jekyll-theme-slate
+show_downloads: false

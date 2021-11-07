@@ -1,6 +1,6 @@
 ---
-layout: alt
 title: Julian Politsch
+layout: alt
 description: DeSEQ
 ---
 

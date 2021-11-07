@@ -1,7 +1,6 @@
 ---
-layout: test
 title: Julian Politsch
-
+layout: test
 ---
 
 ## Profile
