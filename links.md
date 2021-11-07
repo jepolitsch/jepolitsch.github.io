@@ -1,5 +1,5 @@
 ---
-title: Julian Politsch
+title: Docs
 layout: alt
 ---
 
