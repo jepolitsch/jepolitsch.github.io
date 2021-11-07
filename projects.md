@@ -1,7 +1,7 @@
 ---
-title: Julian Politsch
-layout: alt
+title: Projects
 description: projects
+layout: alt
 ---
 
 # 2021
