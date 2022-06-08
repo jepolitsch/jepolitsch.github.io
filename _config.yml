@@ -11,5 +11,5 @@ collections:
     title: Uploads
     output: true
 description: Personal Site
-theme: jekyll-theme-midnight
+theme: jekyll-theme-hacker
 show_downloads: false
